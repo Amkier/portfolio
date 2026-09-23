@@ -1,0 +1,26 @@
+.accordion-gallery{display:flex;gap:12px;height:570px;width:100%;perspective:1400px}
+.ag-panel{position:relative;flex:1 1 0;min-width:0;min-height:0;border-radius:14px;overflow:hidden;background:#e4e6e9;border:1px solid #7182a137;transform-origin:center;isolation:isolate}
+.ag-panel>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:50px 16px 164px;user-select:none}
+.ag-panel:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#090f1df2 0%,#090f1dc9 16%,transparent 48%);pointer-events:none}
+.ag-select{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;background:none;color:#fff;z-index:1;text-align:left;scale:1!important;transform:none!important}
+.ag-select:hover{background:none!important}.ag-select:focus-visible{outline:2px solid #92b7ff;outline-offset:-5px;border-radius:14px}
+.ag-number{position:absolute;top:14px;left:16px;font-size:clamp(35px,4vw,68px);line-height:1;letter-spacing:-3px;color:#20324d}
+.ag-short{position:absolute;bottom:25px;left:50%;writing-mode:vertical-rl;transform:translateX(-50%);font-size:16px;letter-spacing:3px}.ag-active .ag-short{display:none}
+.ag-caption{position:absolute;bottom:23px;left:25px;right:25px;z-index:2;pointer-events:none}.ag-caption[hidden]{display:none}.ag-category{font-size:11px;color:#bbcae0;letter-spacing:1px}.ag-caption h3{font-size:23px;font-weight:500;margin:6px 0}.ag-caption p{font-size:13px;color:#becbdd}.ag-open{pointer-events:auto;display:inline-flex;align-items:center;gap:24px;margin-top:14px;padding:9px 14px;border:1px solid #c6d9ff55;border-radius:9px;background:#96b6ec26;backdrop-filter:blur(18px);color:#fff;font-size:13px;box-shadow:inset 0 1px 0 #ffffff15}.ag-open span{font-size:20px;line-height:1}
+@media(max-width:1100px){.accordion-gallery{height:490px}.ag-caption{left:16px;right:16px}.ag-caption h3{font-size:19px}}
+@media(max-width:700px){.accordion-gallery{flex-direction:column;height:760px;gap:9px;perspective:none}.ag-panel>img{padding:35px 12px 150px}.ag-number{font-size:32px;left:14px;top:12px;letter-spacing:-1px}.ag-short{writing-mode:horizontal-tb;left:65px;bottom:auto;top:19px;transform:none;font-size:13px;letter-spacing:1px}.ag-panel:not(.ag-active)>img{object-fit:cover;object-position:center 45%;padding:0;opacity:.35!important}.ag-panel:not(.ag-active):after{background:#090f1d88}.ag-panel:not(.ag-active) .ag-number{color:#d0e0fb}.ag-caption{bottom:15px}.ag-caption h3{font-size:18px}.ag-caption p{font-size:12px}.ag-open{margin-top:10px}}
+/* Stable-size original PDF artwork: panels reveal the image rather than rescale it. */
+.accordion-gallery{height:570px;perspective:none;--ag-image-width:760px}
+.ag-panel{background:#101722;transform:none;will-change:flex-grow}
+.ag-panel:after{display:none}
+.ag-art{position:absolute;top:56px;bottom:168px;left:50%;width:var(--ag-image-width);transform:translateX(-50%);background:#eef0f3;overflow:hidden}
+.ag-art img{display:block;width:100%;height:100%;object-fit:contain;padding:0;user-select:none}
+.ag-number{font-size:27px;color:#a7c4ff;letter-spacing:-1px;top:15px;left:18px}
+.ag-short{font-size:14px;letter-spacing:2px;transition:opacity .25s}.ag-active .ag-short{display:block;opacity:0}
+.ag-caption{width:calc(var(--ag-image-width) - 48px);right:auto;bottom:22px;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .3s ease,transform .4s ease,visibility .3s;}
+.ag-active .ag-caption{opacity:1;visibility:visible;transform:translateY(0);transition-delay:.12s}
+.ag-caption h3{font-size:20px}.ag-caption p{font-size:13px}.ag-select{transition:none!important;backdrop-filter:none}.ag-select:hover{scale:1!important}
+@media(max-width:700px){.accordion-gallery{height:820px}.ag-art{top:46px;bottom:auto;height:250px}.ag-panel:not(.ag-active) .ag-art{opacity:.15}.ag-caption{width:calc(100% - 32px);left:16px;bottom:17px}.ag-caption h3{font-size:17px}.ag-caption p{font-size:12px}.ag-number{font-size:24px;top:16px}.ag-short{top:19px;left:61px;bottom:auto}.ag-active .ag-art{opacity:1}.ag-panel:not(.ag-active):after{display:none}}
+@media(prefers-reduced-motion:reduce){.ag-caption,.ag-art,.ag-short{transition:none!important}.ag-panel{will-change:auto}}
+/* Layout isolation keeps accordion resizing local; no permanent GPU hints. */
+.ag-panel{will-change:auto}.accordion-gallery{contain:layout style}

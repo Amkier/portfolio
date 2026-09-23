@@ -1,0 +1,15 @@
+/* Smoked glass controls and restrained directional motion. */
+.arrow-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;flex:0 0 auto;color:#a8b9ce;vertical-align:middle;transition:transform .55s cubic-bezier(.22,1,.36,1),color .4s}
+.arrow-icon svg{display:block;width:100%;height:100%}
+:is(.header .contact-nav,.dialog-body .pill.dark,.hero-explore,.contact-circle,.ag-open){background:linear-gradient(135deg,#c3d4ed16,#52658016);border:1px solid #b3c7e438;color:#dbe4ef;box-shadow:inset 0 1px 0 #ffffff12,0 5px 18px #0002;backdrop-filter:blur(18px) saturate(110%);-webkit-backdrop-filter:blur(18px) saturate(110%);transition:transform .55s cubic-bezier(.22,1,.36,1),background .4s,border-color .4s,box-shadow .4s!important;text-decoration:none!important;scale:1!important}
+.header .contact-nav,.dialog-body .pill.dark,.ag-open{border-radius:12px;gap:24px}
+.hero-explore{border-radius:16px}.contact-circle{border-radius:27px;width:92px;height:92px}.hero-explore .arrow-icon{width:23px;height:23px}.contact-circle .arrow-icon{width:35px;height:35px}
+.floating-nav a.is-active{background:linear-gradient(135deg,#b2c9e52b,#718cab1a);box-shadow:inset 0 0 0 1px #c2d8f53d;color:#ecf3ff}.floating-nav a.is-active .floating-number{color:#b3c7e4}
+@media(hover:hover) and (pointer:fine){
+:is(.header .contact-nav,.dialog-body .pill.dark,.hero-explore,.contact-circle,.ag-open):hover{background:linear-gradient(135deg,#c3d4ed2b,#52658025);border-color:#b3c7e478;box-shadow:inset 0 1px 0 #ffffff20,0 8px 24px #0004;transform:translateY(-3px);color:#edf4ff}
+:is(a,button):hover>.arrow-icon{transform:translate(3px,-3px);color:#d6e6fa}
+}
+:is(.header .contact-nav,.dialog-body .pill.dark,.hero-explore,.contact-circle,.ag-open):active{transform:translateY(0) scale(.98)}
+:is(a,button):focus-visible>.arrow-icon{color:#d6e6fa}
+@media(max-width:700px){.contact-circle{width:62px;height:62px;border-radius:19px}.contact-circle .arrow-icon{width:27px;height:27px}.header .contact-nav .arrow-icon{width:17px;height:17px}.hero-explore{border-radius:13px}}
+@media(prefers-reduced-motion:reduce){.arrow-icon,:is(.header .contact-nav,.dialog-body .pill.dark,.hero-explore,.contact-circle,.ag-open){transition:none!important}:is(a,button):hover>.arrow-icon,:is(.header .contact-nav,.dialog-body .pill.dark,.hero-explore,.contact-circle,.ag-open):hover{transform:none}}
